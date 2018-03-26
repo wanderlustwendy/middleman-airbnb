@@ -1,0 +1,24 @@
+---
+title: Le Wagon - Middleman - Team
+---
+
+<div id="team">
+  <div class="team-content">
+    <h1>This page was built with <i class="fa fa-heart"></i> by</h1>
+    <ul class="list-inline">
+      <% data.teammates.each do |teammate| %>
+        <li>
+          <% link_to "https://kitt.lewagon.com/alumni/#{teammate.github_nickname}", target: "_blank" do %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{teammate.github_nickname}", class: "img-circle" %>
+          <% end %>
+          <h2><%= teammate.name %></h2>
+          <p>
+            <% link_to "https://github.com/#{teammate.github_nickname}", target: "_blank" do %>
+              <i class="fa fa-github"></i> <%= teammate.github_nickname %>
+            <% end %>
+          </p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
